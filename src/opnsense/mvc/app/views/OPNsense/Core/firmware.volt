@@ -832,12 +832,6 @@
                         <tbody>
                             <tr>
                                 <td style="width: 20px;"></td>
-                                <td style="width: 150px;">{{ lang._('Type') }}</td>
-                                <td id="product_id"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td style="width: 20px;"></td>
                                 <td style="width: 150px;">{{ lang._('Version') }}</td>
                                 <td id="product_version"></td>
                                 <td></td>
@@ -858,18 +852,6 @@
                                 <td style="width: 20px;"></td>
                                 <td style="width: 150px;">{{ lang._('Commit') }}</td>
                                 <td id="product_hash"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td style="width: 20px;"></td>
-                                <td style="width: 150px;">{{ lang._('Mirror') }}</td>
-                                <td id="product_mirror"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td style="width: 20px;"></td>
-                                <td style="width: 150px;">{{ lang._('Repositories') }}</td>
-                                <td id="product_repos"></td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -920,37 +902,6 @@
                                 <td></td>
                             </tr>
                         </tbody>
-                    </table>
-                </div>
-                <div id="plugins" class="tab-pane">
-                    <table class="table table-striped table-condensed table-responsive" id="pluginlist">
-                        <thead>
-                            <tr>
-                                <th style="vertical-align:middle"><input type="text" class="input-sm" autocomplete="off" id="plugin_search" placeholder="{{ lang._('Name') }}"></th>
-                                <th style="vertical-align:middle">{{ lang._('Version') }}</th>
-                                <th style="vertical-align:middle">{{ lang._('Size') }}</th>
-                                <th style="vertical-align:middle">{{ lang._('Repository') }}</th>
-                                <th style="vertical-align:middle">{{ lang._('Comment') }}</th>
-                                <th style="vertical-align:middle"></th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <div id="packages" class="tab-pane">
-                    <table class="table table-striped table-condensed table-responsive" id="packageslist">
-                        <thead>
-                            <tr>
-                                <th style="vertical-align:middle"><input type="text" class="input-sm" autocomplete="off" id="package_search" placeholder="{{ lang._('Name') }}"></th>
-                                <th style="vertical-align:middle">{{ lang._('Version') }}</th>
-                                <th style="vertical-align:middle">{{ lang._('Size') }}</th>
-                                <th style="vertical-align:middle">{{ lang._('Repository') }}</th>
-                                <th style="vertical-align:middle">{{ lang._('License') }}</th>
-                                <th style="vertical-align:middle">{{ lang._('Comment') }}</th>
-                                <th style="vertical-align:middle"></th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
                     </table>
                 </div>
                 <div id="changelog" class="tab-pane">
