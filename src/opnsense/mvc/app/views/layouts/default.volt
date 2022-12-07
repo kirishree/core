@@ -11,8 +11,8 @@
     <meta name="copyright" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>{{headTitle|default("OPNsense") }} | {{system_hostname}}.{{system_domain}}</title>
-    {% set theme_name = ui_theme|default('opnsense') %}
+    <title>{{headTitle|default("ReachGuard") }} | {{system_hostname}}.{{system_domain}}</title>
+    {% set theme_name = ui_theme|default('ReachGuard') %}
 
     <!-- Favicon -->
     <link href="{{ cache_safe('/ui/themes/%s/build/images/favicon.png' | format(theme_name)) }}" rel="shortcut icon">
@@ -260,8 +260,8 @@
         <!-- page footer -->
         <footer class="page-foot">
           <div class="container-fluid">
-            <a target="_blank" href="{{ product_website }}">{{ product_name }}</a> (c) {{ product_copyright_years }}
-            <a target="_blank" href="{{ product_copyright_url }}">{{ product_copyright_owner }}</a>
+            <a target="_blank" href="https://cloudetel.com/">ReachGuard</a> (c) 2022
+            <a target="_blank" href="https://cloudetel.com/">Cloud Etel</a>
           </div>
         </footer>
       </div>
