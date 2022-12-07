@@ -5,7 +5,6 @@
             <Root url="/" visibility="hidden"/>
             <RootArgs url="/?*" visibility="hidden"/>
         </Dashboard>
-        <License order="1" url="/ui/core/license" cssClass="fa fa-balance-scale fa-fw"/>
         <Password order="2" url="/system_usermanager_passwordmg.php" cssClass="fa fa-key fa-fw">
             <Edit url="/system_usermanager_passwordmg.php*" visibility="hidden"/>
         </Password>
@@ -207,35 +206,17 @@
                 <Details url="/status_dhcpv6_leases.php?*" visibility="hidden"/>
             </Leases>
         </DHCPv6>
-        <OpenDNS VisibleName="OpenDNS" url="/services_opendns.php" cssClass="fa fa-tags fa-fw"/>
         <RouterAdv VisibleName="Router Advertisements" cssClass="fa fa-bullseye fa-fw" />
     </Services>
     <VPN order="50" cssClass="fa fa-globe">
-        <OpenVPN cssClass="fa fa-lock fa-fw" order="20">
-            <Servers order="10" url="/vpn_openvpn_server.php">
-                <Edit url="/vpn_openvpn_server.php?*" visibility="hidden"/>
-                <Step url="/wizard.php?xml=openvpn*" visibility="hidden"/>
-            </Servers>
-            <Clients order="20" url="/vpn_openvpn_client.php">
-                <Edit url="/vpn_openvpn_client.php?*" visibility="hidden"/>
-            </Clients>
-            <CSC order="30" VisibleName="Client Specific Overrides" url="/vpn_openvpn_csc.php">
-                <Edit url="/vpn_openvpn_csc.php?*" visibility="hidden"/>
-            </CSC>
-            <ClientExport order="40" VisibleName="Client Export" url="/ui/openvpn/export">
-                <Edit url="/ui/openvpn/export?*" visibility="hidden"/>
-            </ClientExport>
-            <Status order="60" VisibleName="Connection Status" url="/status_openvpn.php"/>
-            <LogFile order="70" VisibleName="Log File" url="/ui/diagnostics/log/core/openvpn"/>
-        </OpenVPN>
     </VPN>
     <Power order="70" cssClass="fa fa-plug">
         <Reboot order="10" url="/ui/core/reboot" cssClass="fa fa-repeat fa-fw"/>
         <PowerOff VisibleName="Power Off" order="20" url="/ui/core/halt" cssClass="fa fa-power-off fa-fw"/>
     </Power>
     <Help order="80" cssClass="fa fa-support">
-        <Documentation order="10" url="https://docs.opnsense.org/" cssClass="fa fa-book" IsExternal="Y"/>
-        <Forum VisibleName="User Forum" order="20" url="https://forum.opnsense.org/" cssClass="fa fa-ticket" IsExternal="Y"/>
-        <Support VisibleName="Commercial Support" order="30" url="https://opnsense.org/support-overview/commercial-support/" cssClass="fa fa-phone" IsExternal="Y"/>
+        <Documentation order="10" url="https://cloudetel.com/" cssClass="fa fa-book" IsExternal="Y"/>
+        <Forum VisibleName="User Forum" order="20" url="https://cloudetel.com/" cssClass="fa fa-ticket" IsExternal="Y"/>
+        <Support VisibleName="Commercial Support" order="30" url="https://cloudetel.com/" cssClass="fa fa-phone" IsExternal="Y"/>
     </Help>
 </menu>
