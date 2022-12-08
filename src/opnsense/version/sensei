@@ -1,0 +1,11 @@
+{
+    "product_abi": "22.1",
+    "product_arch": "amd64",
+    "product_email": "opensource@sunnyvalley.io",
+    "product_flavour": "OpenSSL",
+    "product_hash": "undefined",
+    "product_id": "os-sensei",
+    "product_name": "sensei",
+    "product_version": "1.12.1",
+    "product_website": "https://www.sunnyvalley.io/sensei"
+}
