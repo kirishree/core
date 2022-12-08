@@ -1,0 +1,1 @@
+db.conn_all.aggregate([{"$unwind": "$security_tags"},{"$match":{"start_time":{"$gt":___START_TIME___,"$lt": ___END_TIME___}}},{"$group":{"_id":{"label":"$security_tags"},"total":{"$sum": 1}}},{"$sort":{"total":-1}},{"$limit":10}])

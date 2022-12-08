@@ -1,0 +1,1 @@
+db.alert_all.aggregate([{"$match":{"start_time":{"$gt":___START_TIME___,"$lt": ___END_TIME___}}},{"$group":{"_id":{"label":"$policyid"},"total":{"$sum":"___SUM_FIELD___"}}},{"$sort":{"total":-1}},{"$limit":10}])

@@ -1,0 +1,1 @@
+db.conn_all.aggregate([{"$match":{"$and": [{"security_tags":{"$not":{"$size": 0}}},{"security_tags":{"$ne": null }},{"start_time":{"$gt":___START_TIME___,"$lt": ___END_TIME___}}]}},{"$group":{"_id":{"label":"$src_username"},"total":{"$sum": 1}}},{"$sort":{"total":-1}},{"$limit":10}])

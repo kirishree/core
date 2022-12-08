@@ -1,0 +1,37 @@
+db.conn_all.aggregate([
+    {
+        "$match": {
+            "start_time": {
+                "$gt":___START_TIME___,
+                "$lt": ___END_TIME___
+            },
+            "src_dir": "EGRESS"
+        }
+    },
+    {
+        "$project": {
+            "label": "$ip_dst_saddr",
+            "total": "___SUM_FIELD___",
+            "_interval": {  "$round": [ {"$divide": [ "start_time", ___INTERVAL___ ]},0 ]  }
+        }
+    },
+    {
+        "$group": {
+            "_id": {
+                "label": "$label",
+                "_interval": "$_interval"
+            },
+            "total": {
+                "$sum": "$total"
+            }
+        }
+    },
+    {
+        "$sort": {
+            "total": -1
+        }
+    },
+    {
+        "$limit": 10
+    }
+])

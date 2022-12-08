@@ -1,0 +1,1 @@
+db.conn_all.aggregate([{"$match":{"start_time":{"$gt":___START_TIME___,"$lt": ___END_TIME___}}},{"$group":{"_id":null,"g":{ "$addToSet":"$app_name"},"f":{ "$addToSet":"$ip_dst_saddr"},"e":{ "$addToSet":"$ip_src_saddr"},"d":{"$sum":"$dst_npackets"},"c":{"$sum":"$src_npackets"},"b":{"$sum":"$dst_nbytes"},"a":{"$sum":"$src_nbytes"}, "total":{"$sum":1}}}])
