@@ -29,7 +29,7 @@
 
 local drawer = require("drawer")
 
-local brandreachguard = {
+local brand_opnsense = {
 " @@@@@@@    @@@@@@@     @@        @@@@@    @    @        @@@@@     @      @        @@       @@@@@@     @@@@@     ",
 " @     @@   @           @@       @     @   @    @       @     @    @      @        @@       @     @    @    @    ",
 " @     @@   @          @  @     @          @    @      @           @      @       @  @      @     @    @     @   ",
@@ -39,8 +39,8 @@ local brandreachguard = {
 " @       @  @@@@@@@ @         @   @@@@@    @    @        @@@@@      @@@@@@     @         @  @       @  @@@@@     "
 }
 
-drawer.addBrand("ReachGuard", {
-	graphic = brandreachguard,
+drawer.addBrand("opnsense", {
+	graphic = brand_opnsense,
 	shift = {x = 10, y = 1},
 })
 
