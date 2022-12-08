@@ -1,0 +1,501 @@
+<model>
+    <mount>//OPNsense/Sensei</mount>
+    <description>
+        OPNsense Zenarmor Application
+    </description>
+    <items>
+        <interfaces type="ArrayField">
+            <name type="TextField">
+                <Required>N</Required>
+            </name>
+            <manageport type="TextField">
+                <Required>N</Required>
+            </manageport>
+            <cpuindex type="TextField">
+                <Required>N</Required>
+            </cpuindex>
+        </interfaces>
+        <logger>
+            <severityLevel type="TextField">
+                <default>INFO</default>
+            </severityLevel>
+            <rotation type="TextField">
+                <default>1d</default>
+            </rotation>
+            <retire type="TextField">
+                <default>3</default>
+            </retire>
+        </logger>
+        <general>
+            <installTimestamp type="TextField"></installTimestamp>
+            <heartbeatTimer type="TextField">
+                <default>49 * * * *</default>
+            </heartbeatTimer>
+            <coreFileEnable type="TextField">
+                <default>false</default>
+            </coreFileEnable>
+            <flavor type="TextField">
+                <default>100</default>
+            </flavor>
+            <healthCheck type="TextField">
+                <default>true</default>
+            </healthCheck>
+            <healthShare type="TextField">
+                <default>true</default>
+            </healthShare>
+            <healthTimer type="TextField">
+                <default>*/5</default>
+            </healthTimer>
+            <heartbeatMonit type="TextField">
+                <default>true</default>
+            </heartbeatMonit>
+            <heartbeatData type="TextField">
+                <default>true</default>
+            </heartbeatData>
+            <hwbypass type="TextField">
+                <default>false</default>
+            </hwbypass>
+            <SenseiTempSize type="TextField">
+                <default>50</default>
+            </SenseiTempSize>
+            <CloudManagementEnable type="TextField">
+                <default>false</default>
+            </CloudManagementEnable>
+            <CloudManagementAdmin type="TextField">
+                <default></default>
+            </CloudManagementAdmin>
+            <CloudManagementUUID type="TextField">
+                <default></default>
+            </CloudManagementUUID>            
+            <license>
+                <plan type="TextField">
+                    <default></default>
+                </plan>
+                <key type="TextField">
+                    <default></default>
+                </key>
+                <startDate type="TextField">
+                    <default></default>
+                </startDate>
+                <endDate type="TextField">
+                    <default></default>
+                </endDate>
+                <Size type="TextField">
+                    <default>0</default>
+                </Size>
+            </license>
+            <support>
+                <key type="TextField">
+                    <default></default>
+                </key>
+                <plan type="TextField">
+                    <default></default>
+                </plan>
+                <startDate type="TextField">
+                    <default></default>
+                </startDate>
+                <endDate type="TextField">
+                    <default></default>
+                </endDate>
+            </support>
+            <clientemail type="TextField">
+                <Required>N</Required>
+            </clientemail>
+            <sendcategory type="TextField">
+                <default>true</default>
+            </sendcategory>
+            <database>
+                <Type type="TextField">
+                    <default>ES</default>
+                </Type>
+                <Host type="TextField">
+                    <default>http://127.0.0.1</default>
+                </Host>
+                <Port type="TextField">
+                    <default>9200</default>
+                </Port>
+                <User type="TextField">
+                    <default></default>
+                </User>
+                <Pass type="TextField">
+                    <default></default>
+                </Pass>
+                <Version type="TextField">
+                    <default>56800</default>
+                </Version>
+                <Remote type="TextField">
+                    <default>false</default>
+                </Remote>
+                <Prefix type="TextField">
+                    <default></default>
+                </Prefix>
+                <ClusterUUID type="TextField">
+                    <default></default>
+                </ClusterUUID>  
+                <retireAfter type="TextField">
+                    <default>7</default>
+                </retireAfter>
+                <dbpath type="TextField">
+                    <default>/usr/local/datastore/sqlite</default>
+                </dbpath>
+            </database>
+            <swapRate type="TextField">
+                    <default>60</default>
+            </swapRate>
+            <maxmemoryusage type="TextField">
+                    <default>3072</default>
+            </maxmemoryusage>
+            <backupPath type="TextField">
+                <default>/usr/local/datastore/backup</default>
+            </backupPath>
+        </general>
+        <shun>
+            <networks type="TextField">
+                <default></default>
+            </networks>
+            <vlans type="TextField">
+                <default></default>
+            </vlans>
+        </shun>
+        <bypass>
+            <enable type="TextField">
+                <default>false</default>
+            </enable>
+            <mode type="TextField">
+                <default>false</default>
+            </mode>
+        </bypass>
+        <haconfig>
+            <enable type="TextField">
+                <default>false</default>
+            </enable>
+            <configUpdateTime type="TextField">
+                <default></default>
+            </configUpdateTime>
+            <policyUpdateTime type="TextField">
+                <default></default>
+            </policyUpdateTime>
+        </haconfig>
+        <netflow>
+            <enabled type="TextField">
+                <default>false</default>
+            </enabled>
+            <version type="TextField">
+                <default>9</default>
+            </version>
+            <collectorip type="TextField">
+                <default>127.0.0.1</default>
+            </collectorip>
+            <collectorport type="TextField">
+                <default>9996</default>
+            </collectorport>
+        </netflow>
+        <updater>
+            <enabled type="TextField">
+                <default>true</default>
+            </enabled>
+            <autocheck type="TextField">
+                <default>true</default>
+            </autocheck>
+            <lastupdate type="TextField">
+                <Required>N</Required>
+            </lastupdate>
+        </updater>
+        <anonymize>
+            <localAddress type="TextField">
+                <default>false</default>
+            </localAddress>
+            <remoteAddress type="TextField">
+                <default>false</default>
+            </remoteAddress>
+        </anonymize>
+                
+        <onboot>
+            <eastpect type="TextField">
+                <default>YES</default>
+            </eastpect>
+            <elasticsearch type="TextField">
+                <default>NO</default>
+            </elasticsearch>
+            <mongod type="TextField">
+                <default>NO</default>
+            </mongod>
+            <senpai type="TextField">
+                <default>YES</default>
+            </senpai>
+        </onboot>
+        <reports>
+            <refresh type="TextField">
+                <default>60000</default>
+            </refresh>
+            <interval type="TextField">
+                <default>3600000</default>
+            </interval>
+            <custominterval>
+                <start type="TextField">
+                    <Required>N</Required>
+                </start>
+                <end type="TextField">
+                    <Required>N</Required>
+                </end>
+            </custominterval>
+            <sum type="TextField">
+                <default>sessions</default>
+            </sum>
+            <size type="IntegerField">
+                <default>10</default>
+            </size>
+            <showhostname type="TextField">
+                <default>false</default>
+            </showhostname>
+            <showBlock type="TextField">
+                <default>false</default>
+            </showBlock>
+            <showLocal type="TextField">
+                <default>false</default>
+            </showLocal>
+            <generate>
+                <enabled type="TextField">
+                    <default>false</default>
+                </enabled>
+                <sum type="TextField">
+                    <default>volume</default>
+                </sum>
+                <timer type="TextField">
+                    <default>45 0 * * *</default>
+                </timer>
+                <pdf type="TextField">
+                    <default>false</default>
+                </pdf>
+                <mail>
+                    <server type="TextField">
+                        <default>127.0.0.1</default>
+                    </server>
+                    <port type="TextField">
+                        <default>25</default>
+                    </port>
+                    <secured type="TextField">
+                        <default>NO</default>
+                    </secured>
+                    <username type="TextField">
+                        <Required>N</Required>
+                    </username>
+                    <password type="TextField">
+                        <Required>N</Required>
+                    </password>
+                    <from type="TextField">
+                        <Required>N</Required>
+                    </from>
+                    <to type="TextField">
+                        <Required>N</Required>
+                    </to>
+                    <nosslverify type="TextField">
+                        <default>false</default>
+                    </nosslverify>
+                </mail>
+            </generate>
+        </reports>
+        <agentrestapi>
+            <enabled type="TextField">
+                <default>false</default>
+            </enabled>
+        </agentrestapi>
+        <dnsEncrihmentConfig>
+            <servers type="TextField">
+                <Required>N</Required>
+            </servers>
+            <reverse type="TextField">
+                <default>false</default>
+            </reverse>
+            <aliases type="TextField">
+                <default>true</default>
+            </aliases>
+        </dnsEncrihmentConfig>
+        <streamReportConfig>
+            <enabled type="TextField">
+                <Required>Y</Required>
+                <default>false</default>
+            </enabled>
+            <server type="TextField">
+                <Required>N</Required>
+            </server>
+            <port type="TextField">
+                <default>514</default>
+            </port>
+            <protocol type="TextField">
+                <default>UDP</default>
+            </protocol>
+            <indexes type="TextField">
+            </indexes>
+        </streamReportConfig>
+        <streamReportDataExternal>
+            <enabled type="TextField">
+                <Required>Y</Required>
+                <default>false</default>
+            </enabled>
+            <uri type="TextField">
+                <Required>N</Required>
+            </uri>
+            <server type="TextField">
+                <Required>N</Required>
+                </server>
+            <port type="TextField">
+                <default>9200</default>
+            </port>
+            <esVersion type="TextField">
+                <default></default>
+            </esVersion>
+            <User type="TextField">
+                <default></default>
+            </User>
+            <Pass type="TextField">
+                  <default></default>
+            </Pass>
+            <ClusterUUID type="TextField">
+              <default></default>
+            </ClusterUUID>             
+        </streamReportDataExternal>
+        <dns>
+            <localDomain type="TextField">
+                <default>intra.example.com</default>
+            </localDomain>
+        </dns>
+        <tls>
+            <enabled type="TextField">
+                <default>false</default>
+            </enabled>
+            <certname type="TextField">
+                <Required>N</Required>
+            </certname>
+            <passtopsites type="TextField">
+                <default>false</default>
+            </passtopsites>
+        </tls>
+        <zenconsole>
+            <centralManagement type="TextField">
+                <default>true</default>
+            </centralManagement>
+            <reportInfastructureError type="TextField">
+                <default>true</default>
+            </reportInfastructureError>
+        </zenconsole>
+        <enrich>
+            <tcpServiceEnable type="TextField">
+                <default>true</default>
+            </tcpServiceEnable>
+            <tcpServiceIP type="TextField">
+                <default>127.0.0.1</default>
+            </tcpServiceIP>
+            <cloudWebcatEnrich type="TextField">
+                <default>true</default>
+            </cloudWebcatEnrich>
+            <cloudResponseTimeout type="TextField">
+                <default>0</default>
+            </cloudResponseTimeout>
+            <dns type="TextField">
+                <default>true</default>
+            </dns>
+            <user type="TextField">
+                <default>true</default>
+            </user>
+        </enrich>
+        <rules>
+            <decision_is_block type="TextField">
+                <default>no</default>
+            </decision_is_block>
+            <appcategories type="ArrayField">
+                <name type="TextField">
+                    <Required>N</Required>
+                </name>
+                <action type="TextField">
+                    <default>accept</default>
+                </action>
+                <writetofile type="TextField">
+                    <default>no</default>
+                </writetofile>
+                <id type="TextField">
+                    <Required>N</Required>
+                </id>
+                <policyid type="TextField">
+                    <default>0</default>
+                </policyid>
+            </appcategories>
+            <apps type="ArrayField">
+                <name type="TextField">
+                    <Required>N</Required>
+                </name>
+                <web20 type="TextField">
+                    <default>no</default>
+                </web20>
+                <description type="TextField">
+                    <Required>N</Required>
+                </description>
+                <category type="TextField">
+                    <Required>N</Required>
+                </category>
+                <action type="TextField">
+                    <default>accept</default>
+                </action>
+                <writetofile type="TextField">
+                    <default>no</default>
+                </writetofile>
+                <id type="TextField">
+                    <Required>N</Required>
+                </id>
+                <policyid type="TextField">
+                    <default>0</default>
+                </policyid>
+            </apps>
+            <webcategoriesType type="TextField">
+                <default></default>
+            </webcategoriesType>
+            <webcategories type="ArrayField">
+                <name type="TextField">
+                    <Required>N</Required>
+                </name>
+                <security type="TextField">
+                    <default>no</default>
+                </security>
+                <action type="TextField">
+                    <default>accept</default>
+                </action>
+                <id type="TextField">
+                    <Required>N</Required>
+                </id>
+                <policyid type="TextField">
+                    <default>0</default>
+                </policyid>
+            </webcategories>
+            <customwebcategories type="ArrayField">
+                <name type="TextField">
+                    <Required>N</Required>
+                </name>{{.CloudAgent.IsCoreGenerationEnabled}}
+                <action type="TextField">
+                    <default>accept</default>
+                </action>
+                <id type="TextField">
+                    <Required>N</Required>
+                </id>
+                <policyid type="TextField">
+                    <default>0</default>
+                </policyid>
+
+            </customwebcategories>
+            <customwebrules type="ArrayField">
+                <site type="TextField">
+                    <Required>N</Required>
+                </site>
+                <category type="TextField">
+                    <Required>N</Required>
+                </category>
+                <catid type="TextField">
+                    <Required>N</Required>
+                    <default>0</default>
+                </catid>
+                <policyid type="TextField">
+                    <default>0</default>
+                </policyid>
+            </customwebrules>
+        </rules>
+    </items>
+</model>

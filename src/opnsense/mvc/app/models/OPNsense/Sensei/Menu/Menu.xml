@@ -1,0 +1,9 @@
+<menu>
+   <Zenarmor order="60" cssClass="fa fa-binoculars">
+       <Dashboard order="10" VisibleName="Dashboard" url="/ui/sensei/index" cssClass="fa fa-dashboard fa-fw"/>
+       <Status order="20" VisibleName="Status" url="/ui/sensei/#/status" cssClass="fa fa-heartbeat fa-fw"/>
+       <Reports order="30" VisibleName="Reports" url="/ui/sensei/reports" cssClass="fa fa-area-chart fa-fw"/>
+       <Policies order="40" VisibleName="Policies" url="/ui/sensei/#/policies" cssClass="fa fa-exchange fa-fw"/>
+       <Configuration order="50" VisibleName="Configuration" url="/ui/sensei/#/configuration" cssClass="fa fa-cog fa-fw"/>
+   </Zenarmor>
+</menu>

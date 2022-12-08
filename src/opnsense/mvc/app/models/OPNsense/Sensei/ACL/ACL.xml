@@ -1,0 +1,28 @@
+    <acl>
+        <page-sensei-dashboard>
+            <name>Zenarmor: Dashboard / Report access</name>
+            <patterns>
+                <pattern>ui/sensei/index/*</pattern>
+                <pattern>api/sensei/query/*</pattern>
+                <pattern>api/sensei/policy/*</pattern>
+                <pattern>api/sensei/settings/*</pattern>
+                <pattern>api/sensei/service/*</pattern>
+                <pattern>api/sensei/engine/*</pattern>
+                <pattern>api/sensei/update/*</pattern>
+                <pattern>api/sensei/tools/*</pattern>
+            </patterns>
+        </page-sensei-dashboard>
+        <page-sensei-reports>
+            <name>Zenarmor: Reports access</name>
+            <patterns>
+                <pattern>ui/sensei/reports/*</pattern>
+                <pattern>api/sensei/query/*</pattern>
+                <pattern>api/sensei/policy/*</pattern>
+                <pattern>api/sensei/settings/*</pattern>
+                <pattern>api/sensei/service/*</pattern>
+                <pattern>api/sensei/engine/*</pattern>
+                <pattern>api/sensei/update/*</pattern>
+                <pattern>api/sensei/tools/*</pattern>
+            </patterns>
+        </page-sensei-reports>
+    </acl>
