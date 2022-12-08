@@ -1,0 +1,1 @@
+select count(*) as total,sum(src_nbytes) as a,sum(dst_nbytes) as b,sum(src_npackets) as c,sum(dst_npackets) as d,count(distinct ip_src_saddr) as e,count(distinct ip_dst_saddr) as f,count(distinct app_name) as g from conn_all where start_time>__GTE__ and start_time<__LTE__ and src_dir="EGRESS" __WHERE__ order by 1 desc limit __SIZE__

@@ -1,0 +1,1 @@
+select count(*) as total,interface as labels, vlanid as label from alert_all where start_time>__GTE__ and start_time<__LTE__ __WHERE__ group by interface,vlanid order by 1 desc limit __SIZE__
