@@ -1,0 +1,42 @@
+{
+      "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }, {
+                "match_phrase": {
+                    "src_dir.keyword": {
+                        "query": "EGRESS"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "app_name.keyword",
+                "size": 10,
+                "order": {
+                    "_count": "desc"
+                }
+            },
+            "aggs": {
+                "results": {
+                    "date_histogram": {
+                        "field": "start_time",
+                        "interval": "__INTERVAL__",
+                        "time_zone": __TZ__,
+                        "min_doc_count": 0
+                    }
+                }
+            }
+        }
+    }
+}

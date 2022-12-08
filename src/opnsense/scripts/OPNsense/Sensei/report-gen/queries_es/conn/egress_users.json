@@ -1,0 +1,35 @@
+{
+    "size": 100,
+    "query": {
+        "bool": {
+            "must": [{
+                    "range": {
+                        "start_time": {
+                            "gte": __GTE__,
+                            "lte": __LTE__,
+                            "format": "epoch_millis"
+                        }
+                    }
+                },
+                {
+                    "match_phrase": {
+                        "src_dir": {
+                            "query": "EGRESS"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "src_username.keyword",
+                "size": "10",
+                "order": {
+                    "_count": "desc"
+                }
+            }
+        }
+    }
+}

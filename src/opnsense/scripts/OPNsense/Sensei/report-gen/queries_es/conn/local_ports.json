@@ -1,0 +1,33 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }, {
+                "match_phrase": {
+                    "src_dir": {
+                        "query": "INGRESS"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "ip_dst_port",
+                "size": 10,
+                "order": {
+                    "_count": "desc"
+                }
+            }
+        }
+    }
+}

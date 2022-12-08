@@ -1,0 +1,33 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }, {
+                "match_phrase": {
+                    "src_dir.keyword": {
+                        "query": "EGRESS"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "script": "doc['src_hostname.keyword'].value+'---'+doc['dst_hostname.keyword'].value",
+                "size": 10,
+                "order": {
+                    "_count": "desc"
+                }
+            }
+        }
+    }
+}

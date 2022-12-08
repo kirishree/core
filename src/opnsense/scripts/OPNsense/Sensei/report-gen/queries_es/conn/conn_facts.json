@@ -1,0 +1,53 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "a": {
+            "sum": {
+                "field": "src_nbytes"
+            }
+        },
+        "b": {
+            "sum": {
+                "field": "dst_nbytes"
+            }
+        },
+        "c": {
+            "sum": {
+                "field": "src_npackets"
+            }
+        },
+        "d": {
+            "sum": {
+                "field": "dst_npackets"
+            }
+        },
+        "e": {
+            "cardinality": {
+                "field": "ip_src_saddr.keyword"
+            }
+        },
+        "f": {
+            "cardinality": {
+                "field": "ip_dst_saddr.keyword"
+            }
+        },
+        "g": {
+            "cardinality": {
+                "field": "app_name.keyword"
+            }
+        }
+    }
+}

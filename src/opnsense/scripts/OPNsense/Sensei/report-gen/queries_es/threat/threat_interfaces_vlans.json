@@ -1,0 +1,28 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "interface.keyword",
+                "size": 10
+                },
+                "aggs": {
+                    "vlans": { "terms": { "field": "vlanid.keyword" } }
+                }
+
+            }
+        }
+    }

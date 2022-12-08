@@ -1,0 +1,35 @@
+{
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            },{
+                "exists": {
+                    "field": "security_tags"
+                }
+            },{
+                "match_phrase": {
+                    "is_blocked": 1
+                }
+            }
+        ]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "src_username.keyword",
+                "size": 10,
+                "order": {
+                    "_count": "desc"
+                }
+            }
+        }
+    }
+}

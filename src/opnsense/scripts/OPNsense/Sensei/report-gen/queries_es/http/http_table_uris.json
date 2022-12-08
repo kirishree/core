@@ -1,0 +1,34 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "uri.keyword",
+                "size": 1000,
+                "order": {
+                    "_count": "desc"
+                }
+            },
+            "aggs": {
+                "a": {
+                    "sum": {
+                        "field": "req_body_len"
+                    }
+                }
+            }
+        }
+    }
+}
