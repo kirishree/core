@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-color:#EEE">
+        <div style="display:flex;background:linear-gradient(0deg, #09A3C6 50%, #09A3C6 50%);background-size:100% 200px;background-repeat:no-repeat">
+            <div style="width:640px;margin-top:50px;margin-left:auto;margin-right:auto;padding:20px">
+                <div style="background-color:#FFF;border-radius:5px;padding:20px 30px">
+                    <h3 style="text-align:center">
+                        Quick Facts ({{ config.get('general', 'HostName') }})
+                    </h3>
+                    <table style="width:100%;border-collapse:collapse;">
+                        <tbody>
+                            {% for row in conn_facts %}
+                                <tr style="border-top:1px solid #E3E3E3">
+                                    {% for col in row %}
+                                        {% if loop.first %}
+                                            <td style="padding:10px;">{{ col }}</td>
+                                        {% endif %}
+                                        {% if loop.last %}
+                                            <td style="text-align:right;padding:10px">{{ col }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <a style="display:block;background-color:#09A3C6;border-radius:5px;padding:20px;margin-top:20px;text-align:center;color:#FFF;text-decoration:none" href="cid:attach1">
+                    Click to download and view detailed reports
+                </a>
+                <div style="text-align:center;font-size:10px;margin-top:10px;color:#09A3C6">
+                    <i>*If download link does not work, use email client's attachment download link.</i>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
