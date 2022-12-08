@@ -1,0 +1,6 @@
+#url,CategoryName
+{% if helpers.exists('OPNsense.Sensei.rules.customwebrules') %}
+{% for rule in helpers.toList('OPNsense.Sensei.rules.customwebrules') %}
+{{ rule.site }},{{ rule.category }}
+{% endfor %}
+{% endif %}

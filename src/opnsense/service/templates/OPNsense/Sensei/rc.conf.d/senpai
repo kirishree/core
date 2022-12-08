@@ -1,0 +1,5 @@
+{% if helpers.exists('OPNsense.Sensei.onboot.senpai') %}
+senpai_enable="{{ OPNsense.Sensei.onboot.senpai }}"
+{% else %}
+senpai_enable="NO"
+{% endif %}

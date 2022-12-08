@@ -1,0 +1,6 @@
+eastpect.cfg:/usr/local/sensei/etc/eastpect.cfg
+rc.conf.d/eastpect:/etc/rc.conf.d/eastpect
+rc.conf.d/senpai:/etc/rc.conf.d/senpai
+rc.conf.d/elasticsearch:/etc/rc.conf.d/elasticsearch
+rc.conf.d/mongod:/etc/rc.conf.d/mongod
+mail.conf:/usr/local/opnsense/scripts/OPNsense/Sensei/report-gen/mail.conf

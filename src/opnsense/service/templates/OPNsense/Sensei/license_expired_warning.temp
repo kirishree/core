@@ -1,0 +1,9 @@
+<p>You Zenarmor Subscription has expired as of {{ expire_date }}. We have tried to automatically renew the subscription with no success.</p>
+
+<p>You should have received an email regarding your expired subscription. Please check your inbox for instructions on how to manually renew your subscription.</p>
+
+<p>Please note that subscriptions which are not renewed for more than two weeks are revoked and your Zenarmor will revert to Free Edition.</p>
+
+<p>If your Premium Subscription is cancelled, you can still continue to enjoy Zenarmor with Free Edition features.</p>
+
+<p>If you have questions or comments, feel free to <strong>reach out to the team.</strong></p>

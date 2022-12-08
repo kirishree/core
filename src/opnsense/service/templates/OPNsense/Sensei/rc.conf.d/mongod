@@ -1,0 +1,5 @@
+{% if helpers.exists('OPNsense.Sensei.onboot.mongod') %}
+mongod_enable="{{ OPNsense.Sensei.onboot.mongod }}"
+{% else %}
+mongod_enable="NO"
+{% endif %}

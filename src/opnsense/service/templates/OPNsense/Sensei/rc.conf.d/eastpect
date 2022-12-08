@@ -1,0 +1,5 @@
+{% if helpers.exists('OPNsense.Sensei.onboot.eastpect') %}
+eastpect_enable="{{ OPNsense.Sensei.onboot.eastpect }}"
+{% else %}
+eastpect_enable="NO"
+{% endif %}

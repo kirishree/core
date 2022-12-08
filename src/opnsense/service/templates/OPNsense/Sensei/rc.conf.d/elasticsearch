@@ -1,0 +1,7 @@
+{% if helpers.exists('OPNsense.Sensei.onboot.elasticsearch') %}
+elasticsearch_enable="{{ OPNsense.Sensei.onboot.elasticsearch }}"
+elasticsearch_env="JAVA_HOME=/usr/local/openjdk8"
+{% else %}
+elasticsearch_enable="NO"
+elasticsearch_env="JAVA_HOME=/usr/local/openjdk8"
+{% endif %}
