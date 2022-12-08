@@ -1,0 +1,25 @@
+try {
+   db.conn_all.deleteMany( { $or: [ {"ip_src_saddr" : "__IP_ADDR__" },{"ip_src_saddr" : "__IP_ADDR__" }]} );
+} catch (e) {
+   print ('Conn:' + e);
+}
+try {
+   db.alert_all.deleteMany( { $or: [ {"ip_src_saddr" : "__IP_ADDR__" },{"ip_src_saddr" : "__IP_ADDR__" }]} );
+} catch (e) {
+   print ('Alert' + e);
+}
+try {
+   db.dns_all.deleteMany( { $or: [ {"ip_src_saddr" : "__IP_ADDR__" },{"ip_src_saddr" : "__IP_ADDR__" }]} );
+} catch (e) {
+   print ('DNS:' + e);
+}
+try {
+   db.http_all.deleteMany( { $or: [ {"ip_src_saddr" : "__IP_ADDR__" },{"ip_src_saddr" : "__IP_ADDR__" }]} );
+} catch (e) {
+   print ('Http:' + e);
+}
+try {
+   db.tls_all.deleteMany( { $or: [ {"ip_src_saddr" : "__IP_ADDR__" },{"ip_src_saddr" : "__IP_ADDR__" }]} );
+} catch (e) {
+   print ('Tls:' + e);
+}

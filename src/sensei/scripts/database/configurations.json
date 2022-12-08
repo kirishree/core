@@ -1,0 +1,103 @@
+[{
+    "key": "core_file_enabled",
+    "value": "false"
+}, {
+    "key": "flavor",
+    "value": "small"
+}, {
+    "key": "health_check",
+    "value": "false"
+}, {
+    "key": "netflow_enabled",
+    "value": "false"
+}, {
+    "key": "netflow_version",
+    "value": "9"
+}, {
+    "key": "netflow_collector_ip",
+    "value": "127.0.0.1"
+}, {
+    "key": "netflow_collector_port",
+    "value": "9996"
+}, {
+    "key": "updater_enabled",
+    "value": "true"
+}, {
+    "key": "updater_auto_check",
+    "value": "true"
+}, {
+    "key": "updater_last_check",
+    "value": "null"
+}, {
+    "key": "auto_start_eastpect",
+    "value": "true"
+}, {
+    "key": "auto_start_elasticsearch",
+    "value": "true"
+}, {
+    "key": "reports_refresh",
+    "value": "60000"
+}, {
+    "key": "reports_interval",
+    "value": "604800000"
+}, {
+    "key": "reports_interval_start",
+    "value": "null"
+}, {
+    "key": "reports_interval_end",
+    "value": "null"
+}, {
+    "key": "reports_criteria",
+    "value": "sessions"
+}, {
+    "key": "auto_reports_enabled",
+    "value": "false"
+}, {
+    "key": "auto_reports_criteria",
+    "value": "volume"
+}, {
+    "key": "auto_reports_server",
+    "value": "127.0.0.1"
+}, {
+    "key": "auto_reports_port",
+    "value": "25"
+}, {
+    "key": "auto_reports_secured",
+    "value": "false"
+}, {
+    "key": "auto_reports_username",
+    "value": "null"
+}, {
+    "key": "auto_reports_password",
+    "value": "null"
+}, {
+    "key": "auto_reports_recipients",
+    "value": "null"
+}, {
+    "key": "dns_local_domain",
+    "value": "intra.example.com"
+}, {
+    "key": "tls_enabled",
+    "value": "false"
+}, {
+    "key": "tls_certificate_name",
+    "value": "null"
+}, {
+    "key": "tls_pass_top_sites",
+    "value": "false"
+}, {
+    "key": "tcp_service_enabled",
+    "value": "true"
+}, {
+    "key": "tcp_service_ip",
+    "value": "127.0.0.1"
+}, {
+    "key": "tcp_service_password",
+    "value": "Sensei1234"
+}, {
+    "key": "cloud_web_cat_enrich",
+    "value": "true"
+}, {
+    "key": "elasticsearch_retire_after",
+    "value": "90"
+}]

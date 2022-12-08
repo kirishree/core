@@ -1,0 +1,761 @@
+[
+    {
+        "name": "app_categories",
+        "index": "conn",
+        "title": "Conn - App Categories Breakdown",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "app_category"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "apps",
+        "index": "conn",
+        "title": "Conn - Apps Breakdown",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "app_name"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "local_hosts",
+        "index": "conn",
+        "title": "Conn - Top Local Hosts",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "src_hostname",
+            "label2": "ip_src_saddr"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "remote_hosts",
+        "index": "conn",
+        "title": "Conn - Top Remote Hosts",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "dst_hostname",
+            "label2": "ip_dst_saddr"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "local_ports",
+        "index": "conn",
+        "title": "Conn - Top Local Serving Ports",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "ip_src_port"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "remote_ports",
+        "index": "conn",
+        "title": "Conn - Top Remote Ports",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "ip_dst_port"
+        },
+        "calcSum": true
+
+    },
+    {
+        "name": "egress_conn_by_app",
+        "index": "conn",
+        "title": "Conn - Egress New Connections by App Over Time",
+        "type": "line-1",
+        "enabled": false,
+        "field": {
+            "label": "app_name"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "egress_conn_by_source",
+        "index": "conn",
+        "title": "Conn - Egress New Connections by Source Over Time",
+        "type": "line-1",
+        "enabled": true,
+        "field": {
+            "label": "src_hostname",
+            "label2": "ip_src_saddr"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "unique_local_hosts",
+        "index": "conn",
+        "title": "Conn - Unique Local Hosts",
+        "type": "line-2",
+        "enabled": false,
+        "field": {
+            "label": "ip_src_saddr"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "unique_remote_hosts",
+        "index": "conn",
+        "title": "Conn - New Connections & Unique Remote Hosts",
+        "type": "line-2",
+        "enabled": false,
+        "field": {
+            "label": "ip_dst_saddr"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "egress_conn_heatmap",
+        "index": "conn",
+        "title": "Conn - Egress New Connections Heatmap",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "src_hostname",
+            "labels2": "ip_src_saddr",
+            "label": "dst_hostname",
+            "label2": "ip_dst_saddr"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "conn_facts",
+        "index": "conn",
+        "title": "Conn - Facts",
+        "type": "table",
+        "enabled": true
+    },
+    {
+        "name": "conn_egress_users",
+        "index": "conn",
+        "title": "Conn - Top Egress Users",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "src_username"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "alert_egress_users",
+        "index": "conn",
+        "title": "Alert - Top Egress Users",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "src_username"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "conn_ingress_users",
+        "index": "conn",
+        "title": "Conn - Top Ingress Users",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "dst_username"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "alert_ingress_users",
+        "index": "conn",
+        "title": "Alert - Top Ingress Users",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "dst_username"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "conn_policies",
+        "index": "conn",
+        "title": "Conn - Policies",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "policyid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "conn_table_apps",
+        "index": "conn",
+        "title": "Conn - Table of Apps",
+        "type": "table",
+        "enabled": false
+    },
+    {
+        "name": "conn_table_local_assets",
+        "index": "conn",
+        "title": "Conn - Table of Local Assets",
+        "type": "table",
+        "enabled": false
+    },
+    {
+        "name": "conn_table_remote_hosts",
+        "index": "conn",
+        "title": "Conn - Table of Remote Hosts",
+        "type": "table",
+        "enabled": false
+    },
+    {
+        "name": "conn_interfaces_vlans",
+        "index": "conn",
+        "title": "Conn - Interface && Vlans",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "interface",
+            "label": "vlanid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "conn_firewalls",
+        "index": "conn",
+        "title": "Conn - Firewalls",
+        "type": "firewall",
+        "enabled": false,
+        "calcSum": false
+    },
+    {
+        "name": "alert_firewalls",
+        "index": "alert",
+        "title": "Alert - Firewalls",
+        "type": "firewall",
+        "enabled": false,
+        "calcSum": false
+    },
+    {
+        "name": "alert_interfaces_vlans",
+        "index": "alert",
+        "title": "Alert - Interface && Vlans",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "interface",
+            "label": "vlanid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "alert_local_hosts",
+        "index": "alert",
+        "title": "Alerts - Blocked Local Hosts Over Time",
+        "type": "line-1",
+        "enabled": false,
+        "field": {
+            "label": "src_hostname",
+            "label2": "ip_src_saddr"
+        }
+    },
+    {
+        "name": "alert_heatmap",
+        "index": "alert",
+        "title": "Alerts - Blocked Conversations Heatmap",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "src_hostname",
+            "labels2": "ip_src_saddr",
+            "label": "dst_hostname",
+            "label2": "ip_dst_saddr"
+        }
+    },
+    {
+        "name": "local_hosts_reasons",
+        "index": "alert",
+        "title": "Alerts - Blocked Local Hosts and Reasons",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "src_hostname",
+            "labels2": "ip_src_saddr",
+            "label": "message"
+        }
+    },
+    {
+        "name": "top_blocks",
+        "index": "alert",
+        "title": "Alerts - Top Blocks",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "message"
+        }
+    },
+    {
+        "name": "alert_policies",
+        "index": "alert",
+        "title": "Alert - Policies",
+        "type": "doughnut",
+        "enabled": false,
+        "order": 1,
+        "field": {
+            "label": "policyid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "http_firewalls",
+        "index": "http",
+        "title": "Web - Firewalls",
+        "type": "firewall",
+        "enabled": false,
+        "calcSum": false
+    },
+    {
+        "name": "web_categories",
+        "index": "http",
+        "title": "Web - Top Categories",
+        "type": "doughnut",
+        "enabled": true
+    },
+    {
+        "name": "http_transactions_by_source",
+        "index": "http",
+        "title": "Web - HTTP Transactions by Source Over Time",
+        "type": "line-1",
+        "enabled": false,
+        "field": {
+            "label": "src_hostname",
+            "label2": "ip_src_saddr"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "http_talkers",
+        "index": "http",
+        "title": "Web - Top Talkers Heatmap",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "src_hostname",
+            "labels2": "ip_src_saddr",
+            "label": "host"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "request_methods",
+        "index": "http",
+        "title": "Web - Top Request Methods",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "method"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "http_versions",
+        "index": "http",
+        "title": "Web - Top HTTP Versions",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "version"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "http_response_codes",
+        "index": "http",
+        "title": "Web - Top HTTP Response Codes",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "status_msg"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "web_ports",
+        "index": "http",
+        "title": "Web - Top Web Ports",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "ip_dst_port"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "devices",
+        "index": "http",
+        "title": "Web - Top Devices",
+        "type": "bar",
+        "enabled": false,
+        "field": {
+            "label": "device"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "http_os",
+        "index": "http",
+        "title": "Web - Top OS",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "os"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "user_agents",
+        "index": "http",
+        "title": "Web - Top User Agents",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "user_agent"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "web_policies",
+        "index": "http",
+        "title": "Web - Policies",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "policyid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "http_table_sites",
+        "index": "http",
+        "title": "Web - Table of Sites",
+        "type": "table",
+        "enabled": false
+    },
+    {
+        "name": "http_table_uris",
+        "index": "http",
+        "title": "Web - Table of URIs",
+        "type": "table",
+        "enabled": false
+    },
+    {
+        "name": "web_interfaces_vlans",
+        "index": "http",
+        "title": "Web - Interface && Vlans",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "interface",
+            "label": "vlanid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "dns_firewalls",
+        "index": "dns",
+        "title": "DNS - Firewalls",
+        "type": "firewall",
+        "enabled": false,
+        "calcSum": false
+    },
+    {
+        "name": "heatmap",
+        "index": "dns",
+        "title": "DNS - Transactions Heatmap",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "src_hostname",
+            "labels2": "ip_src_saddr",
+            "label": "dst_hostname",
+            "label2": "ip_dst_saddr"
+        },
+        "calcSum": false
+
+    },
+    {
+        "name": "dns_policies",
+        "index": "dns",
+        "title": "DNS - Policies",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "policyid"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "queries",
+        "index": "dns",
+        "title": "DNS - Queries Distribution",
+        "type": "bar",
+        "enabled": false,
+        "field": {
+            "label": "query"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "query_types",
+        "index": "dns",
+        "title": "DNS - Query Types Tag Cloud",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "qtype"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "response_codes",
+        "index": "dns",
+        "title": "DNS - Response Codes Tag Cloud",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "resp_code"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "dns_interfaces_vlans",
+        "index": "dns",
+        "title": "DNS - Interface && Vlans",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "interface",
+            "label": "vlanid"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "tls_firewalls",
+        "index": "tls",
+        "title": "TLS - Firewalls",
+        "type": "firewall",
+        "enabled": false,
+        "calcSum": false
+    },
+    {
+        "name": "tls_talkers",
+        "index": "tls",
+        "title": "TLS - Top Talkers Heatmap",
+        "type": "stacked",
+        "enabled": true,
+        "field": {
+            "labels": "src_hostname",
+            "labels2": "ip_src_saddr",
+            "label": "server_name",
+            "label2": "ip_dst_saddr"
+        },
+        "calcSum": false
+
+    },
+    {
+        "name": "tls_categories",
+        "index": "tls",
+        "title": "TLS - Web Categories Breakdown",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "category"
+        },
+        "calcSum": false
+
+    },
+    {
+        "name": "tls_policies",
+        "index": "tls",
+        "title": "TLS - Policies",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "policyid"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "creators_over_time",
+        "index": "tls",
+        "title": "TLS - Top Session Creators Over Time",
+        "type": "line-1",
+        "enabled": false,
+        "field": {
+            "label": "src_hostname"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "destination_ports",
+        "index": "tls",
+        "title": "TLS - Top Destination Ports",
+        "type": "doughnut",
+        "enabled": false,
+        "field": {
+            "label": "ip_dst_port"
+        },
+        "calcSum": false
+
+    },
+    {
+        "name": "servers_over_time",
+        "index": "tls",
+        "title": "TLS - Top Servers Over Time",
+        "type": "line-1",
+        "enabled": false,
+        "field": {
+            "label": "server_name"
+        },
+        "calcSum": false
+    },
+    {
+        "name": "tls_interfaces_vlans",
+        "index": "tls",
+        "title": "TLS - Interface && Vlans",
+        "type": "stacked",
+        "enabled": false,
+        "field": {
+            "labels": "interface",
+            "label": "vlanid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "threat_firewalls",
+        "index": "threat",
+        "title": "Threat - Firewalls",
+        "type": "firewall",
+        "enabled": false,
+        "calcSum": false
+    },
+    {
+        "name": "top-detect-threats",
+        "index": "threat",
+        "title": "Threat - Top Detected Threats",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "security_tags"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "top-detect-hosts",
+        "index": "threat",
+        "title": "Threat - Top Detected Hosts",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "src_hostname"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "top-blocked-threats",
+        "index": "threat",
+        "title": "Threat - Top Blocked Threats",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "security_tags"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "top-blocked-hosts",
+        "index": "threat",
+        "title": "Threat - Top Blocked Hosts",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "src_hostname"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "threat-detected-allowed",
+        "index": "threat",
+        "title": "Threat - Threat Detected Allowed",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "security_tags"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "top-blocked-users",
+        "index": "threat",
+        "title": "Threat - Top Blocked Users",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "src_username"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "top-detected-users",
+        "index": "threat",
+        "title": "Threat - Top Detected Users",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "src_username"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "top-threat-dest",
+        "index": "threat",
+        "title": "Threat - Top threat Destination",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "dst_hostname"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "threat_policies",
+        "index": "threat",
+        "title": "Threat - Policies",
+        "type": "doughnut",
+        "enabled": true,
+        "field": {
+            "label": "policyid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "threat_interfaces_vlans",
+        "index": "threat",
+        "title": "Threat - Interface && Vlans",
+        "type": "stacked",
+        "field": {
+            "labels": "interface",
+            "label": "vlanid"
+        },
+        "calcSum": true
+    },
+    {
+        "name": "top-threat-countries",
+        "index": "threat",
+        "title": "Threat - Top Countries",
+        "type": "map",
+        "enabled": false
+    }
+]

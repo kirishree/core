@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, viewport-fit=cover">
+  <title>The page you are trying to access is restricted by your organization.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      --font-color: #434343;
+      --blue-color: rgb(0, 122, 255);
+      --horizontal-padding: 32px;
+      --compact-horizontal-padding: 20px;
+      --border-radius: 10px;
+      --title-color: #444;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    html, body {
+      width: 100%;
+    }
+
+    body {
+      font-size: 14px;
+      background: linear-gradient(30deg, #dfdfdf 0%, #fafafb 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      cursor: default;
+      user-select: none;
+      font-family: 'Open Sans', sans-serif;
+      color: var(--font-color);
+      padding-top: 156px;
+    }
+
+    h1 {
+      display: inline-flex;
+      gap: 16px;
+    }
+
+    .title {
+      font-size: 32px;
+      color: var(--title-color);
+      font-weight: bolder;
+      padding-top: 2px;
+    }
+
+    .alert {
+      background-color: white;
+      min-width: 320px;
+      max-width: 672px;
+      position: relative;
+      margin: 0 auto;
+      padding-top: 28px;
+      border-radius: var(--border-radius);
+      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14);
+    }
+
+    .alert-body {
+      margin: 21px 0 0 0;
+      padding-left: var(--horizontal-padding);
+      padding-right: var(--horizontal-padding);
+      padding-bottom: 24px;
+      color: var(--font-color);
+    }
+
+    .alert-body p:first-of-type {
+      margin-bottom: 15px;
+      margin-top: 20px;
+    }
+
+    .alert-body p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .bottom-bar {
+      margin-top: 1.3em;
+      height: 22px;
+    }
+
+    .bottom-bar button {
+      float: right;
+      font-size: 13px;
+      line-height: 21px;
+      min-width: 90px;
+      margin: 0 4px;
+      vertical-align: bottom;
+      padding: 0 12px;
+    }
+
+    .bottom-bar .details {
+      float: left;
+    }
+
+    .bottom-bar .details a {
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    #details {
+      display: none;
+      padding: 22px var(--horizontal-padding) 10px var(--horizontal-padding);
+      border-top: 1px solid rgb(217, 217, 217);
+      color: var(--font-color);
+      background-color: rgb(243, 243, 243);
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
+    .bottom-bar.goBack .closePage,
+    .bottom-bar.closePage .goBack{
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 2em;
+      font-weight: 700;
+      line-height: 30px;
+      padding: 0 var(--horizontal-padding);
+      margin-bottom: -6px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 1em;
+      word-wrap: break-word;
+    }
+
+    body .alert {
+      box-shadow: none;
+      border-radius: var(--border-radius);
+      max-width: 640px;
+    }
+
+
+    body #details {
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
+    body p {
+      font-size: 1.1em;
+      line-height: unset;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: var(--blue-color);
+      outline: 1px solid;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: .85;
+    }
+
+    #detailsButton {
+      color: var(--font-color);
+    }
+
+    @media screen and (max-width: 666px) {
+      .alert {
+        box-shadow: none;
+      }
+
+      .alert-body {
+        color: var(--font-color);
+        padding-left: var(--compact-horizontal-padding);
+        padding-right: var(--compact-horizontal-padding);
+        padding-bottom: 30px;
+      }
+
+      h1 {
+        padding: 0 var(--compact-horizontal-padding);
+      }
+
+      #details {
+        padding: 22px var(--compact-horizontal-padding) 22px var(--compact-horizontal-padding);
+        border-top-width: 1px;
+        border-top-color: rgba(0, 0, 0, .15);
+      }
+    }
+  </style>
+  <script>
+    var showDetails = false;
+    function goBack() {
+      window.history.back();
+    }
+    function setDetailsVisibility() {
+      showDetails = !showDetails;
+      if (showDetails) {
+        document.getElementById('details').style.display = 'block';
+        document.getElementById('detailsButton').innerHTML = 'Hide details';
+      } else {
+        document.getElementById('details').style.display = 'none';
+        document.getElementById('detailsButton').innerHTML = 'Show details';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="alert">
+    <h1>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none">
+          <path d="M4.93 4.93L19.07 19.07M2 8.52274V15.4773C2 15.7218 2 15.8441 2.02763 15.9592C2.05213 16.0613 2.09253 16.1588 2.14736 16.2483C2.2092 16.3492 2.29568 16.4357 2.46863 16.6086L7.39137 21.5314C7.56432 21.7043 7.6508 21.7908 7.75172 21.8526C7.84119 21.9075 7.93873 21.9479 8.04077 21.9724C8.15586 22 8.27815 22 8.52274 22H15.4773C15.7218 22 15.8441 22 15.9592 21.9724C16.0613 21.9479 16.1588 21.9075 16.2483 21.8526C16.3492 21.7908 16.4357 21.7043 16.6086 21.5314L21.5314 16.6086C21.7043 16.4357 21.7908 16.3492 21.8526 16.2483C21.9075 16.1588 21.9479 16.0613 21.9724 15.9592C22 15.8441 22 15.7218 22 15.4773V8.52274C22 8.27815 22 8.15586 21.9724 8.04077C21.9479 7.93873 21.9075 7.84119 21.8526 7.75172C21.7908 7.6508 21.7043 7.56432 21.5314 7.39137L16.6086 2.46863C16.4357 2.29568 16.3492 2.2092 16.2483 2.14736C16.1588 2.09253 16.0613 2.05213 15.9592 2.02763C15.8441 2 15.7218 2 15.4773 2H8.52274C8.27815 2 8.15586 2 8.04077 2.02763C7.93873 2.05213 7.84119 2.09253 7.75172 2.14736C7.6508 2.2092 7.56432 2.29568 7.39137 2.46863L2.46863 7.39137C2.29568 7.56432 2.2092 7.6508 2.14736 7.75172C2.09253 7.84119 2.05213 7.93873 2.02763 8.04077C2 8.15586 2 8.27815 2 8.52274Z" stroke="#dc143c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="title">This page is blocked!</div>
+    </h1>
+    <div class="alert-body">
+      <div class="item">
+        <p>
+          Access to the web page you were trying to visit has been blocked in accordance with your organization's policy.
+        </p>
+        <p>
+          Reason: __msg__
+        </p>
+        <p>
+          Please contact your system administrator if you believe this is in error.
+        </p>
+      </div>
+      <div class="bottom-bar goBack closePage">
+        <button type="button" id="goBackButton" class="goBack" onclick="goBack();">Go Back</button>
+        <button type="button" id="detailsButton" onclick="setDetailsVisibility();">Show Details</button>
+      </div>
+    </div>
+    <div id="details" style="display: none;">
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align:right"><b>Reason:</b></td>
+            <td>__msg__</td>
+          </tr>
+          <tr>
+            <td style="text-align:right"><b>Client IP:</b></td>
+            <td>__clip__</td>
+          </tr>
+          <tr>
+            <td style="text-align:right"><b>Remote IP:</b></td>
+            <td>__crip__</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

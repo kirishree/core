@@ -1,0 +1,2 @@
+#Index, Bridge_Flag, Interface_LAN, Interface_WAN, Queue_Index, CPU_Index, Management_Port
+#0, 1, netmap@eth0, netmap@eth0^, 0, 0, 4343

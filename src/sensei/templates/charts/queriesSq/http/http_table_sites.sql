@@ -1,0 +1,1 @@
+select count(*) as total,host as label,sum(req_body_len) as total_req_body_len,sum(rsp_body_len) as total_rsp_body_len,count(distinct src_hostname) as src_hostname   from http_all where start_time>__GTE__ and start_time<__LTE__ __WHERE__ group by 2 order by 1 desc  limit __SIZE__

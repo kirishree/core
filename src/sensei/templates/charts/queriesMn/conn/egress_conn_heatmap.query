@@ -1,0 +1,1 @@
+[{"$match":{"start_time":{"$gt":__GTE__,"$lt": __LTE__},"src_dir": "EGRESS"}},{"$group":{"_id":{"labels":"$src_hostname","label":"$dst_hostname"},"total":{"$sum":"___SUM_FIELD___"}}},{"$sort":{"total":-1}},{"$limit": __SIZE__}]

@@ -1,0 +1,423 @@
+{
+  "dns": {
+    "date_detection": false,
+    "properties": {
+      "answers": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "conn_uuid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "dst_geoip": {
+        "properties": {
+          "area": {
+            "type": "long"
+          },
+          "asn": {
+            "type": "long"
+          },
+          "city_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "continent_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code2": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code3": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "dma_code": {
+            "type": "long"
+          },
+          "ip": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "latitude": {
+            "type": "long"
+          },
+          "location": {
+            "type": "geo_point"
+          },
+          "longitude": {
+            "type": "long"
+          },
+          "metro": {
+            "type": "long"
+          },
+          "postal_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "timezone": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          }
+        }
+      },
+      "encryption": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "ip_dst_port": {
+        "type": "long"
+      },
+      "ip_dst_saddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "ip_src_port": {
+        "type": "long"
+      },
+      "ip_src_saddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "is_AA": {
+        "type": "long"
+      },
+      "is_RA": {
+        "type": "long"
+      },
+      "is_RD": {
+        "type": "long"
+      },
+      "is_TC": {
+        "type": "long"
+      },
+      "is_request": {
+        "type": "long"
+      },
+      "is_response": {
+        "type": "long"
+      },
+      "proto": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "qclass": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "qtype": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "query": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "resp_code": {
+        "type": "long"
+      },
+      "src_geoip": {
+        "properties": {
+          "area": {
+            "type": "long"
+          },
+          "asn": {
+            "type": "long"
+          },
+          "city_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "continent_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code2": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code3": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "dma_code": {
+            "type": "long"
+          },
+          "ip": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "latitude": {
+            "type": "long"
+          },
+          "location": {
+            "type": "geo_point"
+          },
+          "longitude": {
+            "type": "long"
+          },
+          "metro": {
+            "type": "long"
+          },
+          "postal_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "timezone": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          }
+        }
+      },
+      "start_time": {
+        "type": "date"
+      },
+      "tencryption": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "total_answers": {
+        "type": "long"
+      },
+      "trans_id": {
+        "type": "long"
+      },
+      "vlanid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "integer"
+      },
+      "policy": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "policyid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "integer"
+      },
+      "cloud_policyid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "dst_hwaddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "src_hwaddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "interface": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "dst_username": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "src_username": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "is_blocked":  {
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "null_value": 0
+          }
+        },
+        "type": "byte"
+      },
+      "is_local":  {
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "null_value": 0
+          }
+        },
+        "type": "byte"
+      }
+    }
+  }
+}

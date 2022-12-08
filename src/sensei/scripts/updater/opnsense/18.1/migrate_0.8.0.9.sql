@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS application_categories (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE, uuid TEXT);
+CREATE TABLE IF NOT EXISTS web_20_categories (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE);
+CREATE TABLE IF NOT EXISTS applications (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,description TEXT,web_20_category_id INTEGER,application_category_id INTEGER);
+CREATE TABLE IF NOT EXISTS web_categories (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE,is_security_category INTEGER);
+CREATE TABLE IF NOT EXISTS policy_web_categories (id INTEGER PRIMARY KEY AUTOINCREMENT,policy_id TEXT,web_categories_id INTEGER,uuid TEXT,action TEXT);
+CREATE TABLE IF NOT EXISTS policy_app_categories (id INTEGER PRIMARY KEY AUTOINCREMENT,policy_id TEXT,application_id INTEGER,uuid TEXT,action TEXT,writetofile TEXT);
+CREATE TABLE IF NOT EXISTS policy_custom_web_categories (id INTEGER PRIMARY KEY AUTOINCREMENT,policy_id TEXT,custom_web_categories_id INTEGER);
+CREATE TABLE IF NOT EXISTS custom_web_categories (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,uuid TEXT ,action TEXT);
+CREATE TABLE IF NOT EXISTS custom_web_category_sites (id INTEGER PRIMARY KEY AUTOINCREMENT,custom_web_categories_id INTEGER,site TEXT,uuid TEXT);
+CREATE TABLE IF NOT EXISTS policies (id INTEGER PRIMARY KEY,uuid text,name TEXT,usernames TEXT,groups TEXT,interfaces TEXT,vlans TEXT,networks TEXT,directions TEXT, delete_status INTEGER default 0,status INTEGER default 1,decision_is_block  INTEGER default 0);
+CREATE TABLE IF NOT EXISTS schedules (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ,mon_day INTEGER  DEFAULT 0,tue_day INTEGER  DEFAULT 0,wed_day INTEGER  DEFAULT 0,thu_day INTEGER  DEFAULT 0,fri_day INTEGER  DEFAULT 0,sat_day INTEGER  DEFAULT 0,sun_day INTEGER  DEFAULT 0,start_time text, stop_time text,start_timestamp integer, stop_timestamp integer,description text);
+CREATE TABLE IF NOT EXISTS policies_schedules (id INTEGER PRIMARY KEY AUTOINCREMENT,policy_id INTEGER,schedule_id INTEGER);
+CREATE TABLE IF NOT EXISTS interface_settings (id INTEGER PRIMARY KEY AUTOINCREMENT,mode TEXT,name text, lan_interface text,lan_desc text,lan_queue INTEGER,wan_interface text,wan_desc text,wan_queue INTEGER, queue INTEGER , description text,cpu_index INTEGER ,manage_port INTEGER,create_date NUMERIC);
+CREATE TABLE IF NOT EXISTS sensei_db_version(id INTEGER PRIMARY KEY AUTOINCREMENT,version text,creation_date NUMERIC);
+CREATE TABLE IF NOT EXISTS policies_networks (id INTEGER PRIMARY KEY AUTOINCREMENT,policy_id INTEGER,type INTEGER,network TEXT,desc TEXT,status INTEGER);
+CREATE TABLE IF NOT EXISTS shun_networks (id INTEGER PRIMARY KEY AUTOINCREMENT,type INTEGER,network TEXT,desc TEXT,status INTEGER);
+CREATE INDEX IF NOT EXISTS policy_web_categories_idx on policy_web_categories(policy_id);
+CREATE INDEX IF NOT EXISTS policy_app_categories_idx  on policy_app_categories(policy_id);
+CREATE INDEX IF NOT EXISTS policy_custom_web_categories_idx  on policy_custom_web_categories(policy_id);
+CREATE INDEX IF NOT EXISTS policies_networks_idx on policies_networks(policy_id);
+CREATE UNIQUE INDEX IF NOT EXISTS applications_unique_idx on applications(name,web_20_category_id,application_category_id);
+DELETE FROM sensei_db_version where version='0.8.0.10';
+INSERT INTO sensei_db_version(version,creation_date) VALUES('0.8.0.10',datetime('now'));
+DELETE FROM policies WHERE id=0;
+INSERT INTO policies(id,uuid,name,usernames,groups,status) VALUES(0,'0','Default','system','system',1);
+UPDATE custom_web_categories set name=trim(name)

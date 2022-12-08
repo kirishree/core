@@ -1,0 +1,583 @@
+{
+  "http": {
+    "date_detection": false,
+    "properties": {
+      "browser": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "category": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "cli_hdr_names": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "conn_uuid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "cookie_vars": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "device":{
+        "properties":{
+           "category":{
+              "type":"text",
+              "fields":{
+                 "keyword":{
+                    "type":"keyword",
+                    "ignore_above":256
+                 }
+              }
+           },
+           "id":{
+              "type":"text",
+              "fields":{
+                 "keyword":{
+                    "type":"keyword",
+                    "ignore_above":256
+                 }
+              }
+           },
+           "name":{
+              "type":"text",
+              "fields":{
+                 "keyword":{
+                    "type":"keyword",
+                    "ignore_above":256
+                 }
+              }
+           },
+           "os":{
+              "type":"text",
+              "fields":{
+                 "keyword":{
+                    "type":"keyword",
+                    "ignore_above":256
+                 }
+              }
+           },
+           "osver":{
+              "type":"text",
+              "fields":{
+                 "keyword":{
+                    "type":"keyword",
+                    "ignore_above":256
+                 }
+              }
+           },
+           "vendor":{
+              "type":"text",
+              "fields":{
+                 "keyword":{
+                    "type":"keyword",
+                    "ignore_above":256
+                 }
+              }
+           }
+        }
+     },
+     "deviceversion": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "dst_geoip": {
+        "properties": {
+          "area": {
+            "type": "long"
+          },
+          "asn": {
+            "type": "long"
+          },
+          "city_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "continent_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code2": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code3": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "dma_code": {
+            "type": "long"
+          },
+          "ip": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "latitude": {
+            "type": "long"
+          },
+          "location": {
+            "type": "geo_point"
+          },
+          "longitude": {
+            "type": "long"
+          },
+          "metro": {
+            "type": "long"
+          },
+          "postal_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "timezone": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          }
+        }
+      },
+      "dst_hostname": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "encryption": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "host": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "ip_dst_port": {
+        "type": "long"
+      },
+      "ip_dst_saddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "ip_src_port": {
+        "type": "long"
+      },
+      "ip_src_saddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "method": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "os": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "osversion": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "proto": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "proxied": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "referrer": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "req_body_len": {
+        "type": "long"
+      },
+      "rsp_body_len": {
+        "type": "long"
+      },
+      "src_geoip": {
+        "properties": {
+          "area": {
+            "type": "long"
+          },
+          "asn": {
+            "type": "long"
+          },
+          "city_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "continent_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code2": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_code3": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "country_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "dma_code": {
+            "type": "long"
+          },
+          "ip": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "latitude": {
+            "type": "long"
+          },
+          "location": {
+            "type": "geo_point"
+          },
+          "longitude": {
+            "type": "long"
+          },
+          "metro": {
+            "type": "long"
+          },
+          "postal_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_code": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region_name": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "timezone": {
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          }
+        }
+      },
+      "src_hostname": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "srv_hdr_names": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "start_time": {
+        "type": "date"
+      },
+      "status_msg": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "transport_proto": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "uri": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "uri_vars": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "user_agent": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "version": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "vlanid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "integer"
+      },
+      "policy": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "policyid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "integer"
+      },
+      "cloud_policyid": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "dst_hwaddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "src_hwaddr": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "interface": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "dst_username": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "src_username": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "is_blocked":  {
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "null_value": 0
+          }
+        },
+        "type": "byte"
+      },
+      "is_local":  {
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "null_value": 0
+          }
+        },
+        "type": "byte"
+      }
+    }
+  }
+}

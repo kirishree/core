@@ -1,0 +1,1 @@
+[{"$match":{"start_time":{"$gt":__GTE__,"$lt": __LTE__}}},{"$group":{"_id":null,"g":{ "$addToSet":"$app_name"},"f":{ "$addToSet":"$dst_hostname"},"e":{ "$addToSet":"$src_hostname"},"d":{"$sum":"$dst_npackets"},"c":{"$sum":"$src_npackets"},"b":{"$sum":"$dst_nbytes"},"a":{"$sum":"$src_nbytes"}, "total":{"$sum":1}}}]

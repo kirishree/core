@@ -1,0 +1,65 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }, {
+                "match_phrase": {
+                    "src_dir": {
+                        "query": "EGRESS"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "src_hostname.keyword",
+                "size": 1000,
+                "order": {
+                    "_count": "desc"
+                }
+            },
+            "aggs": {
+                "a": {
+                    "cardinality": {
+                        "field": "src_hostname.keyword"
+                    }
+                },
+                "b": {
+                    "cardinality": {
+                        "field": "app_name.keyword"
+                    }
+                },
+                "c": {
+                    "sum": {
+                        "field": "src_nbytes"
+                    }
+                },
+                "d": {
+                    "sum": {
+                        "field": "dst_nbytes"
+                    }
+                },
+                "e": {
+                    "sum": {
+                        "field": "src_npackets"
+                    }
+                },
+                "f": {
+                    "sum": {
+                        "field": "dst_npackets"
+                    }
+                }
+            }
+        }
+    }
+}

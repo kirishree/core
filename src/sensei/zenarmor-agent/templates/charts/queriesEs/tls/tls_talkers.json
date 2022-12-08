@@ -1,0 +1,27 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "script": "doc['ip_src_saddr.keyword'].value+'---'+doc['server_name.keyword'].value",
+                "size": 10,
+                "order": {
+                    "_count": "desc"
+                }
+            }
+        }
+    }
+}

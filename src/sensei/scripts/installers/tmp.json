@@ -1,0 +1,48 @@
+{
+   "query": {
+        "bool": {
+            "must": [
+                {
+                    "range": {
+                        "start_time": {
+                            "gte": 1587737393428,
+                            "lte": 1588342193428,
+                            "format": "epoch_millis"
+                        }
+                    }
+                },
+                {
+                    "query_string": {
+                        "query": "dst_hostname:*test-*",
+                        "analyze_wildcard": true
+                    }
+                }
+            ]
+        }
+    }
+}
+
+
+curl -XGET http://192.168.122.101:9200/c8511c06b2e7d0cbc59a2faf0b9dcf0a39424de2_conn_all/_validate/query?explain -d '{
+    "query": {
+         "bool": {
+             "must": [
+                 {
+                     "range": {
+                         "start_time": {
+                             "gte": 1587737393428,
+                             "lte": 1588342193428,
+                             "format": "epoch_millis"
+                         }
+                     }
+                 },
+                 {
+                     "query_string": {
+                         "query": "dst_hostname:*test-*",
+                         "analyze_wildcard": true
+                     }
+                 }
+             ]
+         }
+     }
+ }'

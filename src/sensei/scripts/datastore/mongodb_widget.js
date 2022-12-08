@@ -1,0 +1,17 @@
+db.conn_all.aggregate([{"$match": {"start_time": { "$gte": __start_time_1__000 }}},{"$group" : {_id:"$ip_src_saddr", count:{$sum:1}}},{$sort:{"count":-1}},{"$limit": 5}]);
+print('--------');
+db.alert_all.aggregate([{"$match": {"start_time": { "$gte": __start_time_1__000 }}},{"$group" : {_id:"$message", count:{$sum:1}}},{$sort:{"count":-1}},{"$limit": 5}]);
+print('--------');
+db.conn_all.distinct("ip_src_saddr",{"start_time": { $gt: __start_time_24__000 },"src_dir": "EGRESS"}).length;
+print('--------');
+db.conn_all.distinct("ip_dst_saddr",{"start_time": { $gt: __start_time_24__000 },"src_dir": "EGRESS"}).length;
+print('--------');
+db.conn_all.distinct("ip_src_saddr",{"start_time": { $gt: __start_time_24__000 },"src_dir": "EGRESS","transport_proto": { $in: ["TCP","UDP"]}}).length;
+print('--------');
+db.http_all.aggregate([{"$match": {"start_time": { "$gte": __start_time_1__000 }}},{"$group" : {_id:"$category", count:{$sum:1}}},{$sort:{"count":-1}},{"$limit": 5}]);
+print('--------');
+db.tls_all.aggregate([{"$match": {"start_time": { "$gte": __start_time_1__000 }}},{"$group" : {_id:"$category", count:{$sum:1}}},{$sort:{"count":-1}},{"$limit": 5}]);
+print('--------');
+db.conn_all.aggregate([{"$match": {"start_time": { "$gte": __start_time_1__000 }}},{"$group" : {_id:"$src_username", count:{$sum:1}}},{$sort:{"count":-1}},{"$limit": 5}]);
+print('--------');
+db.conn_all.aggregate([{"$match": {"start_time": { "$gte": __start_time_1__000 }}},{"$group" : {_id:"$app_category", count:{$sum:1}}},{$sort:{"count":-1}},{"$limit": 5}]);

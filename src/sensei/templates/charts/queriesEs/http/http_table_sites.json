@@ -1,0 +1,44 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "host.keyword",
+                "size": 1000,
+                "order": {
+                    "_count": "desc"
+                }
+            },
+            "aggs": {
+                "a": {
+                    "cardinality": {
+                        "field": "src_hostname.keyword"
+                    }
+                },
+                "b": {
+                    "sum": {
+                        "field": "req_body_len"
+                    }
+                },
+                "c": {
+                    "sum": {
+                        "field": "rsp_body_len"
+                    }
+                }
+            }
+        }
+    }
+}

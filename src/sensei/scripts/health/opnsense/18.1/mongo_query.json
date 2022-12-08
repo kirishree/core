@@ -1,0 +1,2 @@
+db.conn_all.distinct('ip_src_saddr',{'start_time': { $gt: %%TIMESTAMP%% },'src_dir': 'EGRESS',$or: [{'transport_proto': 'TCP'},{'transport_proto': 'UDP'}]}).length;
+db.conn_all.distinct('ip_src_saddr',{'start_time': { $gt: %%TIMESTAMP%% },'src_dir': 'EGRESS',$or: [{'transport_proto': 'TCP6'},{'transport_proto': 'UDP6'}]}).length;

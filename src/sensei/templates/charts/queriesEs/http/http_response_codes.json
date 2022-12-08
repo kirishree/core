@@ -1,0 +1,26 @@
+{
+    "query": {
+        "bool": {
+            "must": [{
+                "range": {
+                    "start_time": {
+                        "gte": __GTE__,
+                        "lte": __LTE__,
+                        "format": "epoch_millis"
+                    }
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "results": {
+            "terms": {
+                "field": "status_msg.keyword",
+                "size": __SIZE__,
+                "order": {
+                    "_count": "desc"
+                }
+            }
+        }
+    }
+}

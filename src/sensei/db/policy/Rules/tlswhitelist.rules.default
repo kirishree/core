@@ -1,0 +1,105 @@
+# TLS Inspection rules v1
+# Version: 1
+# Serial: 1
+# Build: 1
+
+# tlspass rules must come first. They are used as a whitelist
+#tlspass tcp 10.41.41.43 any any any
+
+# Skype
+tlspass tcp any any any any ( sni:"go.trouter.io" )
+
+# TLS white-list group finance
+tlspass tcp any any any any ( webCategory:"Financial Services" )
+
+# Google
+tlspass tcp any any any any ( sni:"*.google.com" )
+tlspass tcp any any any any ( sni:"*.googleapis.com" )
+tlspass tcp any any any any ( sni:"*.gstatic.com" )
+tlspass tcp any any any any ( sni:"*.googleusercontent.com" )
+
+# Facebook
+tlspass tcp any any any any ( sni:"*.facebook.com" )
+tlspass tcp any any any any ( sni:"*.fbcdn.net" )
+
+# Twitter
+tlspass tcp any any any any ( sni:"*.twitter.com" )
+
+# Amazon
+tlspass tcp any any any any ( sni:"*.amazon.com" )
+
+# bank of america
+tlspass tcp any any any any ( sni:"*.bankofamerica.com" )
+tlspass tcp any any any any ( sni:"*.wellsfargo.com" )
+tlspass tcp any any any any ( sni:"*.wellsfargomedia.com" )
+
+# Apple generics
+tlspass tcp any any any any ( sni:"*.apple.com" )
+tlspass tcp any any any any ( sni:"*.icloud.com" )
+
+# Apple maps
+#tlspass tcp any any any any ( sni:"gsp-ssl.ls.apple.com" ) 
+
+# imessage
+#tlspass tcp any any any any ( sni:"courier.push.apple.com" )
+#tlspass tcp any any any any ( sni:"ussjc-edge.icloud-content.com" )
+tlspass tcp any any any any ( sni:"*.icloud-content.com" )
+
+# apple store
+#tlspass tcp any any any any ( sni:"apps.mzstatic.com" )
+tlspass tcp any any any any ( sni:"*.mzstatic.com" )
+
+# Skype
+tlspass tcp any any any any ( sni:"*.skype.com" )
+
+# Microsoft
+tlspass tcp any any any any ( sni:"*.live.com" )
+tlspass tcp any any any any ( sni:"*.microsoft.com" )
+tlspass tcp any any any any ( sni:"*.acompli.net" )
+tlspass tcp any any any any ( sni:"*.office.com" )
+
+# Whatsapp
+tlspass tcp any any any any ( sni:"*.whatsapp.net" )
+tlspass tcp any any any any ( sni:"*.whatsapp.com" )
+
+# Uber
+tlspass tcp any any any any ( sni:"*.uber.com" )
+tlspass tcp any any any any ( sni:"*.oojoovae.org" )
+tlspass tcp any any any any ( sni:"*.geixahba.com" )
+tlspass tcp any any any any ( sni:"*.naevooda.co" )
+tlspass tcp any any any any ( sni:"*.ooshahwa.biz" )
+tlspass tcp any any any any ( sni:"*.shaipeeg.net" )
+
+# Dropbox
+tlspass tcp any any any any ( sni:"*.dropbox.com" )
+
+# Crashlytics
+tlspass tcp any any any any ( sni:"*.crashlytics.com" )
+
+# Snapchat
+tlspass tcp any any any any ( sni:"*.snapchat.com" )
+tlspass tcp any any any any ( sni:"*.snapads.com" )
+
+# Lyft
+tlspass tcp any any any any ( sni:"*.paypalobjects.com" )
+
+# Starbucks
+tlspass tcp any any any any ( sni:"*.starbucks.com" )
+
+# TLS white-list user murat
+# tlspass tcp any any any any ( user:"john" )
+
+# TLS inspect everything TCP 
+# tlsinspect tcp any any any any
+
+# TLS inspect this network (both directions)
+#tlsinspect tcp 192.43.43.0/24 any any any  ( established:true )
+
+# TLS inspect packet destined to this network (only one direction )
+#tlsinspect tcp any any 10.0.0.0/8
+
+# TLS inspect applications with security rating below 5 AND business use rating below 8
+#tlsinspect tcp any any any any ( securityscore:5; bizscore:8 )
+
+# TLS inspect sites if their site rank is below 10.000
+#tlsinspect tcp any any any any ( siterank:10000 )

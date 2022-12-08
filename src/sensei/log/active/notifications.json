@@ -1,0 +1,2 @@
+{"event": {"src":"engine", "time":1670479189, "cat":"service", "id":"eng_conferr", "prio":"crit", "title":"Engine configuration error", "msg":"Cannot read engine configuration"}}
+{"event": {"src":"engine", "time":1670501021, "cat":"service", "id":"eng_conferr", "prio":"crit", "title":"Engine configuration error", "msg":"Cannot read any worker configuration from workers.map"}}

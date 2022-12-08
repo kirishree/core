@@ -1,0 +1,46 @@
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "range": {
+                        "start_time": {
+                            "gte": __GTE__,
+                            "lte": __LTE__,
+                            "format": "epoch_millis"
+                        }
+                    }
+                },
+                {
+                    "exists": {
+                        "field": "security_tags.keyword"
+                    }
+                }
+            ],
+            "must_not": [
+                {
+                    "match_phrase": {
+                        "dst_geoip.latitude": {
+                            "query": 0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "aggs": {
+        "results": {
+            "geohash_grid": {
+                "field": "dst_geoip.location",
+                "precision": 3
+            },
+            "aggs": {
+                "results": {
+                    "geo_centroid": {
+                        "field": "dst_geoip.location"
+                    }
+                }
+            }
+        }
+    }
+}

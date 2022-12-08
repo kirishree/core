@@ -1,0 +1,1 @@
+select count(*) as  total, tag as label from conn_all_security_tags where is_blocked = 0 and start_time>__GTE__ and start_time<__LTE__ __WHERE__ group by 2 order by 1 desc limit __SIZE__

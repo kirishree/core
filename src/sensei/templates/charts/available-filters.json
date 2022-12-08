@@ -1,0 +1,178 @@
+[{
+    "name": "app_category",
+    "display": "Application Category",
+    "type": "string",
+    "indices": ["conn"]
+}, {
+    "name": "app_name",
+    "display": "Application Name",
+    "type": "string",
+    "indices": ["conn"]
+},
+ {
+    "name": "security_tags",
+    "display": "Threat Category",
+    "type": "string",
+    "indices": ["conn"]
+}, {
+    "name": "app_proto",
+    "display": "Application Protocol",
+    "type": "string",
+    "indices": ["alert", "conn"]
+}, {
+    "name": "dst_hostname",
+    "display": "Destination Hostname",
+    "type": "string",
+    "indices": ["alert", "conn", "http", "dns", "tls"]
+},
+    {
+        "name": "is_blocked",
+        "display": "Blocked",
+        "type": "integer",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "is_local",
+        "display": "Local Connection",
+        "type": "integer",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "dst_username",
+        "display": "Destination Username",
+        "type": "string",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "ip_dst_port",
+        "display": "Destination Port",
+        "type": "integer",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    }, {
+        "name": "ip_dst_saddr",
+        "display": "Destination IP",
+        "type": "ip",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    }, {
+        "name": "ip_src_port",
+        "display": "Source Port",
+        "type": "integer",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    }, {
+        "name": "ip_src_saddr",
+        "display": "Source IP",
+        "type": "ip",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    }, {
+        "name": "src_hostname",
+        "display": "Source Hostname",
+        "type": "string",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    }, {
+        "name": "src_username",
+        "display": "Source Username",
+        "type": "string",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "transport_proto",
+        "display": "Transport Protocol",
+        "type": "string",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "policyid",
+        "display": "Policy Id",
+        "type": "string",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+
+    {
+        "name": "vlanid",
+        "display": "VLAN Id",
+        "type": "integer",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "interface",
+        "display": "Interface",
+        "type": "string",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "start_time",
+        "display": "Start Time",
+        "type": "object",
+        "indices": ["alert", "conn", "http", "dns", "tls"]
+    },
+    {
+        "name": "category",
+        "display": "Web Category",
+        "type": "string",
+        "indices": ["http", "tls"]
+    }, {
+        "name": "host",
+        "display": "Host",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "method",
+        "display": "HTTP Request Method",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "version",
+        "display": "HTTP Version",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "status_msg",
+        "display": "HTTP Response Code",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "device",
+        "display": "Device",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "os",
+        "display": "Operating System",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "user_agent",
+        "display": "User Agent",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "uri",
+        "display": "Uri",
+        "type": "string",
+        "indices": ["http"]
+    }, {
+        "name": "query",
+        "display": "DNS Query",
+        "type": "string",
+        "indices": ["dns"]
+    }, {
+        "name": "qtype",
+        "display": "DNS Query Type",
+        "type": "string",
+        "indices": ["dns"]
+    }, {
+        "name": "resp_code",
+        "display": "DNS Response Code",
+        "type": "integer",
+        "indices": ["dns"]
+    }, {
+        "name": "server_name",
+        "display": "TLS Server Name",
+        "type": "string",
+        "indices": ["tls"]
+    }, {
+        "name": "message",
+        "display": "Block Message",
+        "type": "string",
+        "indices": ["alert"]
+    }]

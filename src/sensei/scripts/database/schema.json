@@ -1,0 +1,106 @@
+[{
+    "name": "configurations",
+    "columns": [{
+        "name": "id",
+        "type": "INTEGER PRIMARY KEY AUTOINCREMENT"
+    }, {
+        "name": "key",
+        "type": "TEXT UNIQUE"
+    }, {
+        "name": "value",
+        "type": "TEXT"
+    }, {
+        "name": "default_value",
+        "type": "TEXT"
+    }]
+}, {
+    "name": "interface_settings",
+    "columns": [{
+        "name": "id",
+        "type": "INTEGER PRIMARY KEY AUTOINCREMENT"
+    }, {
+        "name": "interface",
+        "type": "TEXT UNIQUE"
+    }, {
+        "name": "manage_port",
+        "type": "INTEGER"
+    }, {
+        "name": "cpu_index",
+        "type": "INTEGER"
+    }]
+}, {
+    "name": "application_categories",
+    "columns": [{
+        "name": "id",
+        "type": "INTEGER PRIMARY KEY AUTOINCREMENT"
+    }, {
+        "name": "name",
+        "type": "TEXT UNIQUE"
+    }]
+}, {
+    "name": "web_20_categories",
+    "columns": [{
+        "name": "id",
+        "type": "INTEGER PRIMARY KEY AUTOINCREMENT"
+    }, {
+        "name": "name",
+        "type": "TEXT UNIQUE"
+    }]
+}, {
+    "name": "applications",
+    "columns": [{
+        "name": "id",
+        "type": "INTEGER PRIMARY KEY AUTOINCREMENT"
+    }, {
+        "name": "name",
+        "type": "TEXT UNIQUE"
+    }, {
+        "name": "description",
+        "type": "TEXT"
+    }, {
+        "name": "web_20_category_id",
+        "type": "INTEGER"
+    }, {
+        "name": "application_category_id",
+        "type": "INTEGER"
+    }]
+}, {
+    "name": "web_categories",
+    "columns": [{
+        "name": "id",
+        "type": "INTEGER PRIMARY KEY AUTOINCREMENT"
+    }, {
+        "name": "name",
+        "type": "TEXT UNIQUE"
+    }, {
+        "name": "is_security_category",
+        "type": "INTEGER"
+    }]
+}, {
+    "name": "policies",
+    "columns": [{
+        "name": "id",
+        "type": "INTEGER PRIMARY KEY AUTOINCREMENT"
+    }, {
+        "name": "name",
+        "type": "TEXT"
+    }, {
+        "name": "usernames",
+        "type": "TEXT"
+    }, {
+        "name": "groups",
+        "type": "TEXT"
+    }, {
+        "name": "interfaces",
+        "type": "TEXT"
+    }, {
+        "name": "vlans",
+        "type": "TEXT"
+    }, {
+        "name": "networks",
+        "type": "TEXT"
+    }, {
+        "name": "directions",
+        "type": "TEXT"
+    }]
+}]

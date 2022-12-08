@@ -1,0 +1,1 @@
+[{"$match":{"start_time":{"$gt":__GTE__,"$lt": __LTE__}}},{"$group":{"_id":{"label":"$device"},"total":{"$sum":"___SUM_FIELD___"}}},{"$sort":{"total":-1}},{"$limit": __SIZE__}]

@@ -1,0 +1,1 @@
+[{"$match":{"start_time":{"$gt":__GTE__,"$lt": __LTE__}}},{"$project":{"src_hostname":"$src_hostname","dst_hostname":"$dst_hostname", "_interval": {  "$floor": {"$divide": [ { "$toLong": "$start_time" }, __INTERVAL__ ]} }}},{"$group":{"_id":{"labels":"$src_hostname","label":"$dst_hostname","_interval": "$_interval"},"total":{"$sum": 1}}},{"$sort":{"total":-1}},{"$limit":10}]

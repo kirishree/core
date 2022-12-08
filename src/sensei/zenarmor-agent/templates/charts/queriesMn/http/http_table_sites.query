@@ -1,0 +1,1 @@
+[{"$match":{"start_time":{"$gt":__GTE__,"$lt": __LTE__}}},{"$group":{"_id":{ "host": "$host" } ,"total_req_body_len":{ "$sum":"$req_body_len"},"total_rsp_body_len":{ "$sum":"$rsp_body_len"},"src_hostname":{ "$addToSet":"$src_hostname"},"total":{"$sum":1}}},{"$sort":{"total": -1}}]

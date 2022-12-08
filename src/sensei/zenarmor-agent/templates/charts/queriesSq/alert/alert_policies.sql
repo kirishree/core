@@ -1,0 +1,1 @@
+select count(*) as  total, policyid as label from alert_all where start_time>__GTE__ and start_time<__LTE__ __WHERE__ group by policyid order by 1 desc limit __SIZE__
