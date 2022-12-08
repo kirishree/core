@@ -1,0 +1,5 @@
+id = 0
+cloud_id= {{ cloud_id }}
+name = System Default Policy
+tls_inspect_enable = no
+tls_inspect_default = no
